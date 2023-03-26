@@ -29,14 +29,14 @@ class MainActivity : AppCompatActivity() {
             AlertDialog.Builder(this)
                 .setTitle("Cerrar sesión")
                 .setMessage("¿Seguro que desea cerrar su sesión?")
-                .setNegativeButton("") { dialog, view ->
+                .setNegativeButton("NO") { dialog, view ->
                     dialog.dismiss()
                 }.setPositiveButton("SI") { dialog, view ->
                     finish()
                     startActivity(
                         Intent(this@MainActivity, LoginActivity::class.java)
                     )
-                }
+                }.show()
         }
 
     }
