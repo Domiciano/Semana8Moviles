@@ -25,6 +25,14 @@ class MainActivity : AppCompatActivity() {
         binding.pokelista.adapter = adapter
         binding.pokelista.setHasFixedSize(true)
 
+        binding.searchBtn.setOnClickListener {
+            val intnet = Intent(this, PokemonDetailsActivity::class.java)
+            intnet.putExtra("goal", binding.pokemonSearchET.text.toString())
+            startActivity(
+                intnet
+            )
+        }
+        
         binding.logoutBtn.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("Cerrar sesión")

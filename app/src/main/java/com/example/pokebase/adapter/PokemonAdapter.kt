@@ -13,11 +13,7 @@ class PokemonAdapter : Adapter<PokemonVH>() {
 
     val arr = ArrayList<Pokemon>()
 
-    init {
-        arr.add(Pokemon("alfa"))
-        arr.add(Pokemon("beta"))
-        arr.add(Pokemon("gamma"))
-    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonVH {
         return PokemonVH(
