@@ -38,7 +38,7 @@ class PokemonDetailsActivity : AppCompatActivity() {
 
             }
             binding.button.setOnClickListener {
-
+                viewModel.catchPokemon()
             }
 
         }

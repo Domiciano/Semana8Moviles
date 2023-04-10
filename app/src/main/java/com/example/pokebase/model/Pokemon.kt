@@ -1,6 +1,7 @@
 package com.example.pokebase.model
 
 data class Pokemon(
+    var id:String,
     var name:String,
     var sprites: Sprites,
     var stats : ArrayList<Stat>

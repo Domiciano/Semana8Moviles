@@ -11,6 +11,7 @@ import com.example.pokebase.retrofit.RetrofitClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.UUID
 
 class PokemonDetailsViewModel : ViewModel(){
 
@@ -24,6 +25,7 @@ class PokemonDetailsViewModel : ViewModel(){
             val result = RetrofitClient.pokeAPIService.getPokemonById(id)
                 .execute()
                 .body()
+            result?.id = UUID.randomUUID().toString()
 
             withContext(Dispatchers.Main){
                 result?.let {
@@ -36,7 +38,10 @@ class PokemonDetailsViewModel : ViewModel(){
     fun catchPokemon(){
         val p = pokemon.value
         p?.let {
-
+            viewModelScope.launch(Dispatchers.IO) {
+                RetrofitClient.realtimeDBAPIService.postPokemon(it.id, it)
+                    .execute()
+            }
         }
     }
 

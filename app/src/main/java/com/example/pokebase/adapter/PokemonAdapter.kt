@@ -34,5 +34,11 @@ class PokemonAdapter : Adapter<PokemonVH>() {
         }
     }
 
+    fun addAllPokemon(array:ArrayList<Pokemon>){
+        arr.clear()
+        arr.addAll(array)
+        notifyDataSetChanged()
+    }
+
 
 }
