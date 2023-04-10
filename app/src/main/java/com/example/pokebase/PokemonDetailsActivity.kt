@@ -37,6 +37,10 @@ class PokemonDetailsActivity : AppCompatActivity() {
                     .into(binding.pokeIMG)
 
             }
+            binding.button.setOnClickListener {
+
+            }
+
         }
 
 

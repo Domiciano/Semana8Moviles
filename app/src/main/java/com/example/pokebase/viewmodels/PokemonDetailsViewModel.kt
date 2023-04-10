@@ -33,6 +33,13 @@ class PokemonDetailsViewModel : ViewModel(){
         }
     }
 
+    fun catchPokemon(){
+        val p = pokemon.value
+        p?.let {
+
+        }
+    }
+
 
 
 
